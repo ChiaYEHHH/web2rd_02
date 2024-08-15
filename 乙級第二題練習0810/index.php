@@ -55,7 +55,13 @@
 					<div class="content">
 						<?php
 						$do = $_GET['do'] ?? 'main';
-						include "./frontend/{$do}.php";
+						
+						$file = "./frontend/{$do}.php";
+						if (file_exists($file)) {
+							include $file;
+						} else {
+							include "./frontend/main.php";
+						}
 						?>
 					</div>
 				</div>

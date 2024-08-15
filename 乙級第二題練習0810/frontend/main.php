@@ -9,7 +9,7 @@
     margin: auto;
   }
   .tab{
-    
+    width: 15%;
     text-align: center;
     justify-content: center;
     background-color: lightgray;
@@ -30,7 +30,7 @@
   }
   .article{
     width: 95%;
-    border: 2px solid black;
+    border: 1px solid black;
     overflow: auto;
     display: none;
     border-top: 0;

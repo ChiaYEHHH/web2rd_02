@@ -84,7 +84,7 @@ class DB
 
     public function count(...$arg)
     {
-        $sql = "select * from `$this->table`";
+        $sql = "select count(*) from `$this->table`";
 
         if (isset($arg[0])) {
             if (is_array($arg[0])) {
@@ -100,6 +100,7 @@ class DB
         }
         return $this->pdo->query($sql)->fetchColumn();
     }
+    
 }
 
 function q($sql)
