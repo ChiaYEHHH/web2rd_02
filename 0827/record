@@ -1,0 +1,15 @@
+CSS #lef {
+    min-height: 540px;
+}
+
+#main {
+    height: 530px;
+}
+
+#mm {
+    min-height: 520px;
+}
+
+#bottom {
+    padding: 3px 12px;
+}
