@@ -114,13 +114,20 @@ function to($url)
 {
     header("location:" . $url);
 }
-$User = new DB('user');
 
-$data = [
-    'id' => '1',
-    'acc' => '555',
-    'pw' => 'ccc',
-];
+$User = new DB('users');
+$News = new DB('news');
+$Total = new DB('total');
+$Log = new DB('log');
+$Que = new DB("que");
+
+
+
+// $data = [
+//     'id' => '1',
+//     'acc' => '555',
+//     'pw' => 'ccc',
+// ];
 
 // dd($User->find(1));
 // echo $User->count();

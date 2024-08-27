@@ -1,4 +1,4 @@
-<fieldset style="width: 40%;margin:20px auto;">
+<fieldset style="width: 50%;margin:20px auto;">
     <legend>會員登入</legend>
     <table>
         <tr>
@@ -27,6 +27,8 @@
             acc: $('#acc').val(),
             pw: $('#pw').val(),
         }, (chk) => {
+            console.log(chk);
+            
             if (chk == 1) {
                 if ($('#acc').val() == 'admin') {
                     location.href = "admin.php"
