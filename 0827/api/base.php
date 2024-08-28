@@ -66,7 +66,7 @@ class DB
         } else {
             $sql .= " where `id` ='$arg'";
         }
-        echo $sql;
+        // echo $sql;
         return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
 
@@ -93,7 +93,7 @@ class DB
             $k = array_keys($arg);
             $sql = "insert into `$this->table` (`" . join("`,`", $k) . "`) values ('" . join("','", $arg) . "')";
         }
-        echo $sql;
+        // echo $sql;
         return $this->pdo->exec($sql);
     }
 }
@@ -135,5 +135,13 @@ $Que = new DB("que");
 // dd($User->all());
 // $User->del($data);
 
-if (!empty($_SESSION['view'])) {
+if (!isset($_SESSION['total'])) {
+    if ($Total->count(['date' => date("Y-m-d")]) > 0) {
+        $total = $Total->find(['date' => date("Y-m-d")]);
+        $total['total']++;
+        $Total->save($total);
+    } else {
+        $Total->save(['date' => date("Y-m-d"), 'total' => 1]);
+    }
+    $_SESSION['total'] = $Total->find(['date' => date("Y-m-d"),])['total'];
 }

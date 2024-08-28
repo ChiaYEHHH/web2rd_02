@@ -1,4 +1,4 @@
-CSS #lef {
+<pre>CSS #lef {
     min-height: 540px;
 }
 
@@ -13,3 +13,24 @@ CSS #lef {
 #bottom {
     padding: 3px 12px;
 }
+
+back /;
+acc.php;
+單引號雙引號寫錯;
+JQ user 忘記先宣告;
+
+let let user= {
+    acc: $(
+        "#acc").val(),
+        pw: $(
+        "#pw").val(),
+        pw2: $(
+        "#pw2").val(),
+        email: $(
+        "#email").val(),
+}
+
+
+api;
+del.php;
+要記得foreach($_POST['ids'] as $id) </pre>
