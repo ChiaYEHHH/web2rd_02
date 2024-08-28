@@ -17,9 +17,8 @@
 back /;
 acc.php;
 單引號雙引號寫錯;
-JQ user 忘記先宣告;
-
-let let user= {
+JQ user 忘記先宣告let ;
+let user= {
     acc: $(
         "#acc").val(),
         pw: $(
@@ -34,3 +33,15 @@ let let user= {
 api;
 del.php;
 要記得foreach($_POST['ids'] as $id) </pre>
+
+
+front;
+main;
+<script>
+    $(".tag").on('click',function(){
+        $(".tag").removeClass("active");
+        $(".article").removeClass("active");
+        $(this).addClass("active");
+        $(".article").eq($(this).index(".tag")).addClass("active");
+    })
+</script>

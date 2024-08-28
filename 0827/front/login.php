@@ -29,7 +29,7 @@
         }, (chk) => {
             console.log(chk);
             
-            if (chk == 1) {
+            if (chk >= 1) {
                 if ($('#acc').val() == 'admin') {
                     location.href = "admin.php"
                 } else {
