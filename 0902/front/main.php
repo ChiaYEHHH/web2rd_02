@@ -1,60 +1,56 @@
 <style>
 .tags {
-    margin-top: 10px;
-    margin-left: -1px;
     display: flex;
+    margin-left: 10px;
 }
 
 .tag {
     border: 1px solid black;
-    border-radius: 15px 0 0 0;
-    z-index: 10;
-    width: 150px;
-    background-color: lightslategray;
+    border-radius: 8px 0 0 0;
+    background-color: lightblue;
+    /* margin-left: -1px; */
+    width: 100px;
+    height: 25px;
     text-align: center;
+    font-weight: bold;
+    z-index: 10;
 }
 
 .articles {
-    /* margin-top: 10px; */
-    margin-left: -1px;
+    position: relative;
+    margin-left: 10px;
     margin-top: -1px;
-    /* display: flex; */
-    width: 100%;
 }
 
 .article {
     border: 1px solid black;
-    height: 410px;
+    width: 93%;
+    height: 435px;
     overflow: auto;
     display: none;
-    padding: 10px 10px 0 10px;
-}
-
-.tag:hover {
-    background-color: white;
-    cursor: pointer;
+    padding: 10px 20px 0 20px;
 }
 
 .tag.active {
-    background-color: white;
     border-bottom: 1px solid white;
 }
 
 .tag.active,
 .article.active {
-    background-color: white;
     display: block;
+    background-color: white;
 }
 </style>
 <div class="tags">
-    <div class="tag active">健康新知</div>
-    <div class="tag">菸害防制</div>
+    <div class="tag active">健康新知 </div>
+    <div class="tag">菸害防治</div>
     <div class="tag">癌症防治</div>
     <div class="tag">慢性病防治</div>
 </div>
+
 <div class="articles">
     <div class="article active">
-        <span style="font-weight: bolder; font-size: 24px;">健康新知</span>
+        <span style="font-size: larger; font-weight:bolder">健康新知</span>
         <pre>
         缺乏運動已成為影響全球死亡率的第四大危險因子-國人無規律運動之比率高達72.2%
 資料來源： 行政院衛生署國民健康局 
@@ -76,7 +72,7 @@
         </pre>
     </div>
     <div class="article">
-        <span style="font-weight: bolder; font-size: 24px;">菸害防制</span>
+        <span style="font-size: larger; font-weight:bolder">菸害防治</span>
         <pre>
         菸害防治法規
 第二十三條　　違反第五條或第十條第一項規定者，處新臺幣一萬元以上五萬元以下罰鍰，並得按次連續處罰。
@@ -102,7 +98,7 @@
         </pre>
     </div>
     <div class="article">
-        <span style="font-weight: bolder; font-size: 24px;">癌症防治</span>
+        <span style="font-size: larger; font-weight:bolder">癌症防治</span>
         <pre>
         降低罹癌風險 建構健康生活型態
 癌症防治   三管齊下  Part 1 降低罹癌風險建構健康生活型態 
@@ -124,9 +120,9 @@
         </pre>
     </div>
     <div class="article">
-        <span style="font-weight: bolder; font-size: 24px;">慢性病防治</span>
+        <span style="font-size: larger; font-weight:bolder">慢性病防治</span>
         <pre>
-        長期憋尿 泌尿系統問題多 
+長期憋尿 泌尿系統問題多 
 資料來源：中央健康保險局雙月刊第98期
 上稿日期：2012/08/10
 文／游小雯
@@ -154,10 +150,10 @@
 <script>
 $(document).ready(function() {
     $(".tag").on('click', function() {
-        $('.tag').removeClass('active');
-        $('.article').removeClass('active');
+        $(".tag").removeClass('active');
         $(this).addClass('active');
-        $(".article").eq($(this).index('.tag')).addClass('active');
+        $(".article").removeClass('active');
+        $(".article").eq($(this).index(".tag")).addClass('active');
     })
 })
 </script>
