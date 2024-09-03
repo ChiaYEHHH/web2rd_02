@@ -1,6 +1,6 @@
 <fieldset style="width: 95%; margin:20px auto">
     <legend>帳號管理</legend>
-    <form action="./api/acc.php" method="post" class="cent">
+    <form action="./api/del_acc.php" method="post" class="cent">
         <table class="tab ct" style="margin:auto">
             <tr>
                 <td class="clo" style="width: 150px">帳號</td>
@@ -20,14 +20,14 @@
         </table>
         <div>
             <div class="ct">
-                <a href="./api/del_acc.php"><button>修改</button></a>
+                <button type="submit">修改</button>
                 <button type="reset">清除</button>
             </div>
         </div>
     </form>
 </fieldset>
-<fieldset style="width: 60%; margin:50px auto">
-    <legend>會員註冊</legend>
+<fieldset style="width: 95%; margin:auto">
+    <legend>新增會員</legend>
     <table class="tab cent">
         <tr>
             <td class="clo" style="width:60%">Step1:登入帳號</td>
