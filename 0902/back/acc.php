@@ -13,7 +13,7 @@
             ?>
                 <tr>
                     <td><?= $row['name'] ?></td>
-                    <td><?= $row['pw'] ?></td>
+                    <td><?= str_repeat("*",strlen($row['pw'])) ?></td>
                     <td><input type="checkbox" name="del[]" value="<?= $row['id'] ?>"></td>
                 </tr>
             <?php endforeach; ?>

@@ -15,3 +15,16 @@ $_SESSION['view'] = $total->find(['date' => date("Y-m-d")])['total'];
 index
 總瀏覽人數
 q("select sum(`total`) as `totalview` from `total` ")[0]['totalview'];
+
+
+$(".article").eq($(this).index(".tag")).addClass('active');
+
+
+function clean() {
+	$("input[type='text']").val("");
+	$("input[type='checkbox']").prop('checked', false);
+}
+
+
+
+str_repeat("*",strlen($row['pw'])) 
