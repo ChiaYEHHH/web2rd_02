@@ -6,11 +6,11 @@
             <td><input type="text" name="name" id="name"></td>
         </tr>
         <tr>
-            <td class="clo" style="width:60%">Step2:密碼</td>
+            <td class="clo" style="width:60%">Step2:登入密碼</td>
             <td><input type="password" name="pw" id="pw"></td>
         </tr>
         <tr>
-            <td class="clo" style="width:60%">Step3:確認密碼</td>
+            <td class="clo" style="width:60%">Step3:再次確認密碼</td>
             <td><input type="password" name="pw2" id="pw2"></td>
         </tr>
         <tr>

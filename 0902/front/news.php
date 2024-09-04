@@ -1,5 +1,5 @@
 <fieldset>
-    <legend>目前位置:首頁 > 最新文章</legend>
+    <legend>目前位置:首頁 > 最新文章區</legend>
     <table class="tab">
         <tr>
             <th width="40%">標題</th>
