@@ -13,7 +13,7 @@
     <div>
         <div>
             <button onclick="login()">登入</button>
-            <button onclick="clear()">清除</button>
+            <button onclick="clean()">清除</button>
             <div style="float: right;">
                 <a href="?do=forgot">忘記密碼</a>
                 <a href="?do=reg">尚未註冊</a>
