@@ -44,24 +44,24 @@
                     <marquee style="width:72%;">請民眾踴躍投稿電子報，讓電子報成為大家相互交流、分享的園地!詳見最新文章</marquee>
                     <span style="width:22%; display:inline-block;">
                         <?php
-						if (isset($_SESSION['user'])) {
-							echo "歡迎，" . $_SESSION['user'];
-							echo "<a href='./api/logout.php'><button>登出</button></a>";
-						} else {
-							echo "<a href='?do=login'>會員登入</a>";
-						}
-						?>
+                        if (isset($_SESSION['user'])) {
+                            echo "歡迎，" . $_SESSION['user'];
+                            echo "<a href='./api/logout.php'><button>登出</button></a>";
+                        } else {
+                            echo "<a href='?do=login'>會員登入</a>";
+                        }
+                        ?>
                     </span>
                     <div class="content">
                         <?php
-						$do = $_GET['do'] ?? 'main';
-						$file = "./front/{$do}.php";
-						if (file_exists($file)) {
-							include $file;
-						} else {
-							include "./front/main.php";
-						}
-						?>
+                        $do = $_GET['do'] ?? 'main';
+                        $file = "./front/{$do}.php";
+                        if (file_exists($file)) {
+                            include $file;
+                        } else {
+                            include "./front/main.php";
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

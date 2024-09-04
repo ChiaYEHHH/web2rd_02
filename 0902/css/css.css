@@ -273,6 +273,7 @@ input[type=radio] {
 
 .tab {
 	width: 80%;
+	margin: auto;
 }
 
 .nbcent {

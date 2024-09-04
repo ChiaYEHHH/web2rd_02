@@ -1,9 +1,9 @@
 <fieldset>
     <legend>目前位置:首頁 > 問卷調查</legend>
-    <table>
-        <tr>
-            <th>編號:</th>
-            <th>問卷題目</th>
+    <table style="margin:auto;">
+        <tr class="clo">
+            <th>編號</th>
+            <th style="width: 70%;">問卷題目</th>
             <th>投票總數</th>
             <th>結果</th>
             <th>狀態</th>
@@ -23,7 +23,7 @@
                 <td class='ct'>
                     <?php
                     if (isset($_SESSION['user'])) {
-                        echo "<a href='?do=vote&id={$que['id']}'>我要投票</a>";
+                        echo "<a href='?do=vote&id={$que['id']}'>參與投票</a>";
                     } else {
                         echo "請先登入";
                     }

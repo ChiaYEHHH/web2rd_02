@@ -1,47 +1,48 @@
-<fieldset style="width: 50%; margin:50px auto">
+<fieldset style="width: 90%; margin:50px auto">
     <legend>新增問卷</legend>
     <div style="display: flex;">
-        <div class="clo">問卷名稱:</div>
-        <input type="text" name="subject" id="subject">
+        <div class="clo ct" style="width: 30%;">問卷名稱</div>
+        <input style="width: 60%;" type="text" name="title" id="titleQue">
+        <!-- <input type="text"> -->
     </div>
-    <div class="clo" id="options">
-        <div>選項:
-            <input type="text" name="option" id="option">
+    <div id="opts" style="margin-top: 10px;">
+        <div class="clo">
+            選項:<input style="width: 60%;" type="text" name="opt">
             <button onclick="more()">更多</button>
         </div>
     </div>
-    <div>
-        <div class="ct">
-            <button onclick="send()">新增</button>
-            <button onclick="clear()">清空</button>
-        </div>
+    <div class="ct cent">
+        <button onclick="send()">新增</button>
+        <button onclick="clean()">清空</button>
     </div>
 </fieldset>
 
 <script>
-function more() {
-    let opt = `
-        <div>選項:
-            <input type="text" name="option" id="option">
+    function more() {
+        let opt = `
+        <div class="clo">
+            選項:<input style="width: 60%;" type="text" name="opt" id="opt">
         </div>
-        `;
-    $("#options").prepend(opt);
-}
-
-function send() {
-    let options = new array();
-    $("input[name='option']").each((i, o) => {
-        options.push($(o).val())
-    })
-    let que = {
-        subject: $("#subject").val(),
-        options
+    `;
+        $("#opts").prepend(opt);
     }
-    $.post("./api/que.php",
-        que, () => {
-            alert("問卷已新增完成");
-            clear()
+
+    function send() {
+        let opts = new Array();
+        $("input[name='opt']").each((i, o) => {
+            opts.push($(o).val());
+        })
+        console.log(opts);
+
+        let que = {
+            title: $("#titleQue").val(),
+            opts
         }
-    )
-}
+        console.log(que);
+        $.post("./api/que.php", que, () => {
+            alert("新增問卷成功")
+            location.reload();
+        })
+
+    }
 </script>

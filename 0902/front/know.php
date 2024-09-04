@@ -1,0 +1,1 @@
+<h2 class="cent ct">目前無資料</h2>
