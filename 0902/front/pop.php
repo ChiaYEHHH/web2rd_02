@@ -1,9 +1,10 @@
 <fieldset>
-    <legend>目前位置:首頁 > 最新文章區</legend>
+    <legend>目前位置:首頁 > 人氣文章區</legend>
     <table class="tab">
         <tr>
             <th style="width:30%">標題</th>
             <th>內容</th>
+            <th style="width:30%">人氣</th>
         </tr>
         <?php
         $itemnum = $News->count(['sh' => 1]);
@@ -21,6 +22,7 @@
             <tr>
                 <td class="clo"><?= $row['title'] ?></td>
                 <td><?= substr($row['article'],0,30) ?></td>
+                <td><?= $row['good']?>個人說<img src="./icon/02B03.jpg"style="width:30px"></td>
             </tr>
         <?php endforeach; ?>
     </table>
