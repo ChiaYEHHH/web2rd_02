@@ -3,8 +3,8 @@
     <table class="tab">
         <tr>
             <th style="width:30%">標題</th>
-            <th>內容</th>
-            <th style="width:30%">人氣</th>
+            <th style="width:50%">內容</th>
+            <th>人氣</th>
         </tr>
         <?php
         $itemnum = $News->count(['sh' => 1]);
@@ -15,14 +15,22 @@
         $now = $_GET['p'] ?? 1;
         $start = ($now - 1) * $div;
         // echo $now;
-        $rows = $News->all(['sh' => 1]," limit $start,$div");
+        $rows = $News->all(['sh' => 1], "order by `goods` desc limit $start,$div");
         // dd($rows);
         foreach ($rows as $idx => $row):
         ?>
             <tr>
-                <td class="clo"><?= $row['title'] ?></td>
-                <td><?= substr($row['article'],0,30) ?></td>
-                <td><?= $row['good']?>個人說<img src="./icon/02B03.jpg"style="width:30px"></td>
+                <td class="clo" style="width:30%"><?= $row['title'] ?></td>
+                <td style="width:50%">
+                    <div class="short"><?= substr($row['article'], 0, 30) ?></div>
+                    <div class="alery">
+                        <h3><?= $row['title'] ?></h3>
+                        <?= nl2br($row['article']) ?>
+                    </div>
+                </td>
+                <td>
+                    <?= $row['goods'] ?>個人說<img src="./icon/02B03.jpg" style="width:30px">
+                </td>
             </tr>
         <?php endforeach; ?>
     </table>
@@ -46,3 +54,11 @@
         ?>
     </div>
 </fieldset>
+<script>
+    function good($id, $acc) {
+        $.post("./api/good.php", {
+            id: $id,
+            acc: $acc
+        })
+    }
+</script>

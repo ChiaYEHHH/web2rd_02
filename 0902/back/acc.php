@@ -50,7 +50,7 @@
     <div>
         <div class="ct cent">
             <button onclick="reg()">註冊</button>
-            <button onclick="clear()">清除</button>
+            <button onclick="clean()">清除</button>
         </div>
     </div>
 </fieldset>

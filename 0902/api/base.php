@@ -137,6 +137,7 @@ $Total = new DB('total');
 if (!isset($_SESSION['view'])) {
     if ($Total->count(['date' => date("Y-m-d")]) > 0) {
         $total = $Total->find(['date' => date("Y-m-d")]);
+        dd($total);
         $total['total']++;
         $Total->save($total);
     } else {
@@ -145,13 +146,3 @@ if (!isset($_SESSION['view'])) {
     $_SESSION['view'] = $Total->find(['date' => date("Y-m-d")])['total'];
 }
 
-// if (!isset($_SESSION['total'])) {
-//     if ($Total->count(['date' => date('Y-m-d')]) > 0) {
-//         $total = $Total->find(['date' => date('Y-m-d')]);
-//         $total['total']++;
-//         $Total->save($total);
-//     }else{
-//         $Total->save(['date' => date('Y-m-d'),'total'=>1]);
-//     }
-//     $_SESSION['total'] = $Total->find(['date'=>date("Y-m-d")])['total'];
-// }

@@ -1,9 +1,9 @@
-<fieldset>
+<fieldset style="width:98%">
     <legend>目前位置:首頁 > 最新文章區</legend>
-    <table class="tab">
+    <table class="tab" style="width:98%">
         <tr>
             <th style="width:30%">標題</th>
-            <th>內容</th>
+            <th style="width:65%">內容</th>
         </tr>
         <?php
         $itemnum = $News->count(['sh' => 1]);
@@ -14,13 +14,16 @@
         $now = $_GET['p'] ?? 1;
         $start = ($now - 1) * $div;
         // echo $now;
-        $rows = $News->all(['sh' => 1]," limit $start,$div");
+        $rows = $News->all(['sh' => 1], " limit $start,$div");
         // dd($rows);
         foreach ($rows as $idx => $row):
         ?>
             <tr>
-                <td class="clo"><?= $row['title'] ?></td>
-                <td><?= substr($row['article'],0,30) ?></td>
+                <td class="clo tags" style="width:30%"><?= $row['title'] ?></td>
+                <td style="width:65%">
+                    <div class="short"><?= substr($row['article'], 0, 50) ?></div>
+                    <div class="long" style="display:none"><?= nl2br($row['article']) ?></div>
+                </td>
             </tr>
         <?php endforeach; ?>
     </table>
@@ -44,3 +47,8 @@
         ?>
     </div>
 </fieldset>
+<script>
+    $(".tags").on('click',function(){
+        $(this).next().children(".short,.long").toggle();
+    })
+</script>

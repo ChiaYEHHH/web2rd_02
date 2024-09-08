@@ -2,28 +2,28 @@
 $que = $Que->find(['id' => $_GET['id']]);
 // dd($que);
 ?>
-<fieldset>
+<fieldset style="width: 98%;">
     <legend>目前位置:首頁 > 問卷調查 > <?= $que['title']; ?></legend>
     <h4><?= $que['title']; ?></h4>
-    <table class="tab">
+    <table class="tab" style="width: 98%;">
 
         <?php
         $rows = $Que->all(['subject_id' => $que['id']]);
         // dd($rows);
         foreach ($rows as $idx => $row):
+            $rate = $row['vote'] / $que['vote'];
+            $show = round($rate, 2) * 100;
+            $bg = $rate * 65;
         ?>
             <tr>
-                <td>
-                    <?= $idx + 1; ?>
-                </td>
-                <td style="width: 80%;">
+
+                <td style="width: 50%;">
                     <?= $row['title']; ?>
-
                 </td>
-                <td>
-                    <?= $row['vote']; ?>票
+                <td style="display: flex;">
+                    <div style="width: <?= $bg ?>%; height: 20px; background:gray;"></div>
+                    <?= $row['vote']; ?>票(<?= $show ?>%)
                 </td>
-
             </tr>
         <?php endforeach; ?>
 

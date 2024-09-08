@@ -16,11 +16,8 @@ $que = $Que->find(['id' => $_GET['id']]);
         $rows = $Que->all(['subject_id' => $que['id']]);
         foreach ($rows as $idx => $row):
         ?>
-            <tr style="margin-top: 15px;">
-                <td>
-                    <?= $idx + 1; ?>
-                    <!-- 編號 -->
-                </td>
+            <tr>
+                
                 <td>
                     <input type="radio" name="opt" value="<?= $row['id']; ?>">
                     <?= $row['title']; ?>

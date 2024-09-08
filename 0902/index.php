@@ -14,16 +14,12 @@
     <script src="./js/js.js"></script>
 </head>
 
-<body>
-    <div id="alerr"
-        style="background:rgba(51,51,51,0.8); color:#FFF; min-height:100px; width:300px; position:fixed; display:none; z-index:9999; overflow:auto;">
-        <pre id="ssaa"></pre>
-    </div>
-    <iframe name="back" style="display:none;"></iframe>
+<body>   
     <div id="all">
         <div id="title">
-            <?= date("m 月 d 號 l"); ?> | 今日瀏覽: <?= $Total->find(['date' => date("Y-m-d")])['total'] ?> | 累積瀏覽:
-            <?= q("select sum(`total`) as `totalview` from `total` ")[0]['totalview']; ?>
+            <?= date("m 月 d 號 l"); ?> | 今日瀏覽: <?= $Total->find(['date' => date("Y-m-d")])['total']; ?> | 累積瀏覽:
+            <?= q("select sum(`total`) as 'totalview' from `total`")[0]['totalview']; ?>
+           
             <a style="float: right;" href="index.php">回首頁</a>
         </div>
         <div id="title2">

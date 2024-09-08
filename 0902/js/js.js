@@ -16,6 +16,6 @@ function good(id, type, user) {
 }
 
 function clean() {
-	$("input[type='text']").val("");
+	$("input[type='text'],input[type='password']").val("");
 	$("input[type='checkbox']").prop('checked', false);
 }
